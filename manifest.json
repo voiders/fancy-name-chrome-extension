@@ -1,0 +1,45 @@
+{
+  "name": "fancy-name",
+  "version": "0.0.0",
+  "description": "fancy description",
+  "manifest_version": 2,
+  "icons": {
+    "16": "assets/favicon.png",
+    "128": "assets/favicon.png"
+  },
+  "background": {
+    "scripts": [
+      "build/chromereload.js"
+    ]
+  },
+  "options_ui": {
+    "page": "src/options.html",
+    "chrome_style": true
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "build/contentscript.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "assets/favicon.png",
+      "38": "assets/favicon.png"
+    },
+    "default_title": "test yo extension",
+    "default_popup": "src/popup.html"
+  }
+}
