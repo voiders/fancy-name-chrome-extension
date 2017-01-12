@@ -6,8 +6,8 @@
     "webpack": "webpack",
     "clean": "rimraf ./build && mkdir build",
     "livereload": "livereload ./build -p 35729",
-    "prestart": "npm run clean",
-    "start": "env-cmd ./.env concurrently \"npm run webpack\" \"npm run livereload\""
+    "prestart": "yarn run clean",
+    "start": "env-cmd ./.env concurrently \"yarn run webpack\" \"yarn run livereload\""
   },
   "babel": {
     "presets": [
